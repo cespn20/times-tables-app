@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Times Tables Practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="/static/manifest.json">
+    <meta name="theme-color" content="#1a73e8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Times Tables">
+    <link rel="apple-touch-icon" href="/static/icons/icon-192x192.png">
+</head>
+<body>
+    <!-- Trophy Container -->
+    <div id="trophy-container">
+        <div class="trophy-content">
+            <div class="trophy-icon">🏆</div>
+            <h2>Congratulations!</h2>
+            <p>You've completed the entire set!</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Times Tables Practice</h1>
+        
+        <div class="settings">
+            <label for="table-select">Practice Table:</label>
+            <select id="table-select">
+                <option value="random">Random</option>
+                <option value="2and4">2, 4</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+        </div>
+
+        <div id="game-container">
+            <div id="problem-container">
+                <div class="problem-container">
+                    <div id="problem">
+                        <span id="num1">?</span> × <span id="num2">?</span> = 
+                        <input type="number" id="answer" min="0">
+                    </div>
+                    <button id="check">Check Answer</button>
+                </div>
+                <div class="feedback" id="feedback"></div>
+
+                <div class="stats">
+                    <p>Correct: <span id="correct-count">0</span></p>
+                    <p>Total: <span id="total-count">0</span></p>
+                </div>
+            </div>
+            <div id="scoreboard">
+                <h2>Times Tables Mastered</h2>
+                <div id="sets-list">
+                    <!-- Sets will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

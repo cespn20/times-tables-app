@@ -1,15 +1,17 @@
 from flask import Flask, send_from_directory, jsonify, request
 import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return send_from_directory('static', 'index.html')
+    return send_from_directory('../static', 'index.html')
 
 @app.route('/static/<path:path>')
 def serve_static(path):
-    return send_from_directory('static', path)
+    return send_from_directory('../static', path)
 
 @app.route('/check_answer', methods=['POST'])
 def check_answer():
@@ -23,7 +25,3 @@ def check_answer():
         'correct': user_answer == correct_answer,
         'correct_answer': correct_answer
     })
-
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 10000))
-    app.run(host='0.0.0.0', port=port)

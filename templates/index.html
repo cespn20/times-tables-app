@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Times Tables Practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     
     <!-- PWA Support -->
@@ -15,6 +16,14 @@
     <link rel="apple-touch-icon" href="{{ url_for('static', filename='icons/icon-192x192.png') }}">
 </head>
 <body>
+    <div id="trophy-container">
+        <div class="trophy-content">
+            <div class="trophy-icon">🏆</div>
+            <h2>Congratulations!</h2>
+            <p>You've completed the entire set!</p>
+        </div>
+    </div>
+
     <div class="container">
         <h1>Times Tables Practice</h1>
         
@@ -53,7 +62,7 @@
             <p>Total: <span id="total-count">0</span></p>
         </div>
     </div>
-    
+
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script>
         // Register Service Worker
