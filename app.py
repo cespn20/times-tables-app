@@ -1,11 +1,11 @@
 from flask import Flask, send_from_directory, jsonify, request
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 @app.route('/')
 def home():
-    return send_from_directory('static', 'index.html')
+    return app.send_static_file('index.html')
 
 @app.route('/static/<path:path>')
 def serve_static(path):
@@ -24,6 +24,7 @@ def check_answer():
         'correct_answer': correct_answer
     })
 
+# This is only used when running locally. Render will use gunicorn
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 10000))
     app.run(host='0.0.0.0', port=port)
