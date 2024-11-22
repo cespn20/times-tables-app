@@ -1,0 +1,166 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 30px;
+}
+
+.settings {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+select {
+    padding: 8px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.problem-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#problem {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#answer {
+    width: 100px;
+    padding: 8px;
+    font-size: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1557b0;
+}
+
+.feedback {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+    min-height: 27px;
+}
+
+.feedback.correct {
+    color: #0f9d58;
+}
+
+.feedback.incorrect {
+    color: #d93025;
+}
+
+.stats {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.stats p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #5f6368;
+}
+
+/* PWA Install Prompt */
+.install-prompt {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #1a73e8;
+    color: white;
+    z-index: 1000;
+}
+
+.install-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.install-banner p {
+    margin: 0;
+}
+
+.install-banner button {
+    background-color: white;
+    color: #1a73e8;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    #problem {
+        font-size: 20px;
+    }
+
+    #answer {
+        width: 80px;
+        font-size: 18px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .settings select {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Add bottom padding for iOS safari */
+@supports (-webkit-touch-callout: none) {
+    body {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
